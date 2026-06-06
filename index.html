@@ -11,6 +11,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="stylesheet" href="/css/style.css">
     <script src="/js/script.js" defer></script>
+    <meta property="og:url" content="https://wiki.kontyra.name.ng/">
+    <meta property="og:image" content="https://wiki.kontyra.name.ng/favicon.svg">
 </head>
 <body>
 
@@ -42,6 +44,57 @@
 </section>
 
 <main>
+
+<div class="premium-play-container" style="text-align: right; padding: 1rem;">
+    <button id="play-button" style="background-color: #ffd700; color: #000; padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+        Listen (Premium Voice)
+    </button>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const playBtn = document.getElementById('play-button');
+    if(playBtn) {
+        let isPlaying = false;
+        const synth = window.speechSynthesis;
+        let utterance = null;
+
+        playBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                synth.cancel();
+                isPlaying = false;
+                playBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> Listen (Premium Voice)';
+            } else {
+                const textToRead = document.querySelector('main').innerText;
+                utterance = new SpeechSynthesisUtterance(textToRead);
+
+                // Try to find a female voice
+                let voices = synth.getVoices();
+                let femaleVoice = voices.find(v => v.name.includes('Female') || v.name.includes('Zira') || v.name.includes('Samantha') || v.name.includes('Victoria') || v.name.includes('Google UK English Female'));
+
+                if (femaleVoice) {
+                    utterance.voice = femaleVoice;
+                }
+
+                utterance.onend = () => {
+                    isPlaying = false;
+                    playBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> Listen (Premium Voice)';
+                };
+
+                synth.speak(utterance);
+                isPlaying = true;
+                playBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg> Stop Listening';
+            }
+        });
+
+        // Ensure voices are loaded
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = () => { voices = synth.getVoices(); };
+        }
+    }
+});
+</script>
+
 
     <!-- Featured Article -->
     <div class="container">
