@@ -15,7 +15,7 @@
     }
 
     function initSearch() {
-        var forms = document.querySelectorAll('.search-bar');
+        var forms = document.querySelectorAll('.search-bar, #search-page-form');
         forms.forEach(function (form) {
             form.addEventListener('submit', function (e) {
                 e.preventDefault();

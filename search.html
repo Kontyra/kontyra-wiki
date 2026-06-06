@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search — KONTYRA Wiki</title>
+    <meta name="description" content="Search the KONTYRA Wiki for articles, products, research, and documentation.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/script.js" defer></script>
+    <style>
+        .search-page-header {
+            padding: 56px 24px 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .search-page-header h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .search-page-bar {
+            display: flex;
+            max-width: 600px;
+            gap: 0;
+        }
+
+        .search-page-bar input {
+            flex: 1;
+            background: var(--bg-2);
+            border: 1px solid var(--border);
+            border-right: none;
+            border-radius: 10px 0 0 10px;
+            color: var(--text);
+            font-size: 0.95rem;
+            padding: 12px 18px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-page-bar input:focus { border-color: #444; }
+        .search-page-bar input::placeholder { color: var(--text-dim); }
+
+        .search-page-bar button {
+            background: var(--accent);
+            border: none;
+            border-radius: 0 10px 10px 0;
+            color: #000;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            padding: 12px 22px;
+            transition: background 0.2s;
+        }
+
+        .search-page-bar button:hover { background: #e0e0e0; }
+
+        .search-results-section {
+            padding: 40px 24px 80px;
+        }
+
+        .search-count {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin-bottom: 28px;
+        }
+
+        .no-query {
+            padding: 60px 0;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .no-query p {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .no-query span {
+            font-size: 0.875rem;
+            color: var(--text-dim);
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">✦KONTYRA <span>Wiki</span></a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/documentation.html">Documentation</a></li>
+            <li><a href="/research.html">Research</a></li>
+            <li><a href="/roadmap.html">Roadmap</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+        <div class="nav-search">
+            <input class="nav-search-input" type="search" placeholder="Search wiki…" aria-label="Search">
+        </div>
+    </div>
+</nav>
+
+<div class="search-page-header">
+    <div class="container">
+        <h1>Search results for "<span id="search-query-title"></span>"</h1>
+        <form class="search-page-bar" id="search-page-form">
+            <input
+                id="search-input"
+                type="search"
+                placeholder="Search articles, products, documentation…"
+                aria-label="Search"
+                autocomplete="off"
+            >
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="search-results-section">
+    <div class="container">
+        <div id="search-count" class="search-count"></div>
+        <div id="search-results" class="article-grid">
+            <div class="no-query">
+                <p>Enter a search term above to find articles.</p>
+                <span>Try "DevOS", "intelligence", or "foundation"</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <h3>✦KONTYRA Wiki</h3>
+            <p>The official knowledge platform for the KONTYRA ecosystem. Continuously updated as KONTYRA grows.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Wiki</h4>
+            <ul>
+                <li><a href="/articles/">Articles</a></li>
+                <li><a href="/research.html">Research</a></li>
+                <li><a href="/documentation.html">Documentation</a></li>
+                <li><a href="/architecture.html">Architecture</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+                <li><a href="/articles/introducing-devos.html">DevOS</a></li>
+                <li><a href="/products.html#matguru">MatGuru</a></li>
+                <li><a href="/products.html#econcli">EconCLI</a></li>
+                <li><a href="/products.html#trust-api">Trust API</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>More</h4>
+            <ul>
+                <li><a href="/roadmap.html">Roadmap</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/articles/wiki-style-guide.html">Style Guide</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 KONTYRA. All rights reserved.</span>
+        <span>wiki.kontyra.name.ng</span>
+    </div>
+</footer>
+
+</body>
+</html>
