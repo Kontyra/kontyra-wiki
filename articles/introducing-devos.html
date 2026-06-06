@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing DevOS — KONTYRA Wiki</title>
+    <meta name="description" content="DevOS is KONTYRA's developer operating system — a unified environment for building, deploying, and understanding software at scale.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">✦KONTYRA <span>Wiki</span></a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products.html" class="active">Products</a></li>
+            <li><a href="/documentation.html">Documentation</a></li>
+            <li><a href="/research.html">Research</a></li>
+            <li><a href="/roadmap.html">Roadmap</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+        <div class="nav-search">
+            <input class="nav-search-input" type="search" placeholder="Search wiki…" aria-label="Search">
+        </div>
+    </div>
+</nav>
+
+<article>
+    <div class="article-header">
+        <div class="breadcrumb">
+            <a href="/">Home</a>
+            <span>›</span>
+            <a href="/articles/">Articles</a>
+            <span>›</span>
+            <span>Introducing DevOS</span>
+        </div>
+        <h1>Introducing DevOS</h1>
+        <p class="article-subtitle">DevOS is KONTYRA's developer operating system — a unified environment for building, deploying, and understanding software at the speed of thought.</p>
+        <div class="article-meta-row">
+            <span class="tag">Product</span>
+            <span class="date">June 6, 2026</span>
+            <span class="read-time">· 8 min read</span>
+        </div>
+    </div>
+
+    <div class="article-body">
+
+        <div class="table-of-contents">
+            <h4>Contents</h4>
+            <ol>
+                <li><a href="#what-is-devos">What is DevOS?</a></li>
+                <li><a href="#the-problem">The Problem It Solves</a></li>
+                <li><a href="#core-concepts">Core Concepts</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#who-its-for">Who It's For</a></li>
+                <li><a href="#status">Current Status</a></li>
+            </ol>
+        </div>
+
+        <h2 id="what-is-devos">What is DevOS?</h2>
+
+        <p>DevOS is KONTYRA's flagship developer product — a developer operating system designed to serve as the unified intelligence layer for software engineering work. Rather than a collection of independent tools that must be stitched together, DevOS presents a coherent environment where building, testing, deploying, monitoring, and understanding code are all first-class, connected operations.</p>
+
+        <p>The "OS" in DevOS is intentional. Just as an operating system abstracts hardware and provides a stable surface for applications, DevOS abstracts the complexity of modern software infrastructure and provides a stable surface for engineering work — regardless of the underlying stack, cloud provider, or team size.</p>
+
+        <blockquote>
+            "DevOS is what you get when you stop treating developer tools as a collection of separate products and start treating the developer's entire workflow as a single system worth engineering properly."
+        </blockquote>
+
+        <h2 id="the-problem">The Problem It Solves</h2>
+
+        <p>Modern software engineering has a fragmentation problem. The average engineering team uses dozens of disconnected tools:</p>
+
+        <ul>
+            <li>One tool for version control, another for CI/CD</li>
+            <li>A separate observability stack disconnected from the deployment pipeline</li>
+            <li>Documentation that lives outside the codebase and goes stale immediately</li>
+            <li>No shared understanding of how systems actually behave in production</li>
+        </ul>
+
+        <p>Each tool solves one problem well but creates coordination overhead everywhere else. Engineers spend enormous energy managing the connections between tools rather than building things that matter.</p>
+
+        <p>DevOS treats this fragmentation as the core engineering problem to solve. It is not another tool to add to the stack — it is the layer that makes the stack coherent.</p>
+
+        <h2 id="core-concepts">Core Concepts</h2>
+
+        <h3>Continuous Context</h3>
+        <p>DevOS maintains a continuous model of your software — what it does, how it behaves, where it fails, and how it changes over time. This context is not a snapshot; it is an ongoing, live model that updates as your code and your production environment evolve.</p>
+
+        <h3>Unified Lifecycle</h3>
+        <p>Build, test, deploy, and monitor are not separate phases in DevOS — they are stages of a continuous loop. Changes in production behavior feed back into the development environment. Test failures inform monitoring alerts. The lifecycle is a circuit, not a pipeline.</p>
+
+        <h3>Legible Infrastructure</h3>
+        <p>Infrastructure should be understandable by the engineers who depend on it. DevOS surfaces infrastructure state in human-readable form, not just machine-readable metrics. Engineers should be able to ask questions about their systems and get useful answers.</p>
+
+        <h2 id="capabilities">Capabilities</h2>
+
+        <p>DevOS is being built around six core capability areas:</p>
+
+        <ul>
+            <li><strong>Codebase Intelligence</strong> — Semantic understanding of codebases, including dependency graphs, change impact analysis, and architectural pattern recognition</li>
+            <li><strong>Pipeline Orchestration</strong> — Unified build and deployment pipelines that are aware of the full context of your system</li>
+            <li><strong>Observability</strong> — Monitoring and alerting integrated directly with the development workflow, not bolted on afterward</li>
+            <li><strong>Documentation Generation</strong> — Living documentation that updates automatically as code changes, sourced from the codebase itself</li>
+            <li><strong>Incident Intelligence</strong> — When things go wrong, DevOS provides structured context — what changed, what broke, and why</li>
+            <li><strong>Team Context</strong> — Shared understanding of system state across engineering teams, reducing the cost of knowledge transfer</li>
+        </ul>
+
+        <h2 id="architecture">Architecture</h2>
+
+        <p>DevOS is designed as a set of composable modules built on a shared intelligence core:</p>
+
+        <pre><code>┌─────────────────────────────────────────────┐
+│                  DevOS                      │
+├──────────┬──────────┬──────────┬────────────┤
+│  Build   │  Deploy  │ Monitor  │    Docs    │
+│  Module  │  Module  │  Module  │   Module   │
+├──────────┴──────────┴──────────┴────────────┤
+│            Intelligence Core                │
+│   (Codebase Model + Context Engine)         │
+├─────────────────────────────────────────────┤
+│       KONTYRA Data Layer / Trust API        │
+└─────────────────────────────────────────────┘</code></pre>
+
+        <p>The Intelligence Core is what distinguishes DevOS from an orchestration tool. It is not merely connecting modules — it is building and maintaining a model of your software that each module can query and contribute to.</p>
+
+        <h2 id="who-its-for">Who It's For</h2>
+
+        <p>DevOS is designed for engineering teams that have moved beyond the early chaos of building and are now dealing with the structural complexity of maintaining and evolving a real system. Specifically:</p>
+
+        <ul>
+            <li><strong>Mid-sized engineering teams</strong> (5–50 engineers) who feel the coordination cost of their current toolchain but can't justify enterprise-scale infrastructure</li>
+            <li><strong>Platform engineers</strong> who are responsible for the developer experience and want a coherent system to maintain</li>
+            <li><strong>Senior engineers and architects</strong> who need to reason about systems at multiple levels of abstraction simultaneously</li>
+        </ul>
+
+        <div class="callout">
+            <p><strong>Not yet available:</strong> DevOS is currently in active development. Early access details will be published in the KONTYRA Roadmap.</p>
+        </div>
+
+        <h2 id="status">Current Status</h2>
+
+        <p>DevOS is in active internal development at KONTYRA. The current development phase is focused on the Intelligence Core — specifically the codebase modeling and context engine that all other modules will depend on.</p>
+
+        <p>The product will move to limited external testing when the Intelligence Core reaches a level of reliability that makes it genuinely useful, not just technically impressive. KONTYRA does not release products to demonstrate progress. Products are released when they are ready to be useful.</p>
+
+        <hr>
+
+        <p>To understand the philosophy behind how DevOS was conceived, read <a href="/articles/continuous-intelligence-limitless-impact.html">Continuous Intelligence, Limitless Impact</a>. To learn about the broader KONTYRA ecosystem, read <a href="/articles/what-is-kontyra.html">What is KONTYRA?</a></p>
+
+    </div>
+</article>
+
+<div class="article-nav">
+    <a href="/articles/what-is-kontyra.html">
+        <small>Previous Article</small>
+        ← What is KONTYRA?
+    </a>
+    <a href="/articles/continuous-intelligence-limitless-impact.html">
+        <small>Next Article</small>
+        Continuous Intelligence, Limitless Impact →
+    </a>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <h3>✦KONTYRA Wiki</h3>
+            <p>The official knowledge platform for the KONTYRA ecosystem. Continuously updated as KONTYRA grows.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Wiki</h4>
+            <ul>
+                <li><a href="/articles/">Articles</a></li>
+                <li><a href="/research.html">Research</a></li>
+                <li><a href="/documentation.html">Documentation</a></li>
+                <li><a href="/architecture.html">Architecture</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+                <li><a href="/articles/introducing-devos.html">DevOS</a></li>
+                <li><a href="/products.html#matguru">MatGuru</a></li>
+                <li><a href="/products.html#econcli">EconCLI</a></li>
+                <li><a href="/products.html#trust-api">Trust API</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>More</h4>
+            <ul>
+                <li><a href="/roadmap.html">Roadmap</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/articles/wiki-style-guide.html">Style Guide</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 KONTYRA. All rights reserved.</span>
+        <span>wiki.kontyra.name.ng</span>
+    </div>
+</footer>
+
+</body>
+</html>

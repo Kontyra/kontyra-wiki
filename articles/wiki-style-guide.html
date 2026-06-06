@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki Style Guide — KONTYRA Wiki</title>
+    <meta name="description" content="The KONTYRA Wiki Style Guide defines article structure, heading formats, citation rules, and naming conventions for consistent, high-quality content.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">✦KONTYRA <span>Wiki</span></a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/documentation.html">Documentation</a></li>
+            <li><a href="/research.html">Research</a></li>
+            <li><a href="/roadmap.html">Roadmap</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+        <div class="nav-search">
+            <input class="nav-search-input" type="search" placeholder="Search wiki…" aria-label="Search">
+        </div>
+    </div>
+</nav>
+
+<article>
+    <div class="article-header">
+        <div class="breadcrumb">
+            <a href="/">Home</a>
+            <span>›</span>
+            <a href="/articles/">Articles</a>
+            <span>›</span>
+            <span>Wiki Style Guide</span>
+        </div>
+        <h1>KONTYRA Wiki Style Guide</h1>
+        <p class="article-subtitle">Conventions for article structure, headings, citations, and naming that keep the KONTYRA Wiki consistent, readable, and trustworthy as it grows.</p>
+        <div class="article-meta-row">
+            <span class="tag">Reference</span>
+            <span class="date">June 6, 2026</span>
+            <span class="read-time">· 5 min read</span>
+        </div>
+    </div>
+
+    <div class="article-body">
+
+        <div class="table-of-contents">
+            <h4>Contents</h4>
+            <ol>
+                <li><a href="#article-structure">Article Structure</a></li>
+                <li><a href="#heading-format">Heading Format</a></li>
+                <li><a href="#writing-style">Writing Style</a></li>
+                <li><a href="#citation-rules">Citation Rules</a></li>
+                <li><a href="#naming-conventions">Naming Conventions</a></li>
+                <li><a href="#article-categories">Article Categories</a></li>
+                <li><a href="#what-belongs-here">What Belongs Here vs. docs.kontyra.name.ng</a></li>
+            </ol>
+        </div>
+
+        <h2 id="article-structure">Article Structure</h2>
+
+        <p>Every article in the KONTYRA Wiki follows a consistent structure. This makes articles predictable for readers and easier to maintain over time.</p>
+
+        <h3>Required elements</h3>
+
+        <ul>
+            <li><strong>Title</strong> — Clear, specific, and noun-led. "What is KONTYRA?" not "An Introduction to KONTYRA"</li>
+            <li><strong>Subtitle</strong> — One or two sentences that summarize what the reader will learn. Written in full sentences.</li>
+            <li><strong>Metadata row</strong> — Category tag, publication date, and estimated read time</li>
+            <li><strong>Table of Contents</strong> — Required for articles over 600 words. Links to each H2 heading.</li>
+            <li><strong>Body</strong> — The article content, structured with H2 and H3 headings</li>
+        </ul>
+
+        <h3>Optional elements</h3>
+
+        <ul>
+            <li><strong>Callout boxes</strong> — For status updates, warnings, or important notices that break flow if inline</li>
+            <li><strong>Blockquotes</strong> — For direct quotes from KONTYRA team members or foundational statements</li>
+            <li><strong>Code blocks</strong> — For technical content, CLI examples, or architecture diagrams in ASCII</li>
+            <li><strong>Article navigation</strong> — Previous / next links at the bottom of sequential articles</li>
+        </ul>
+
+        <h3>Standard closing</h3>
+        <p>Every article ends with a horizontal rule followed by one or two sentences linking to related articles. This keeps readers in the wiki rather than bouncing to a dead end.</p>
+
+        <h2 id="heading-format">Heading Format</h2>
+
+        <p>The KONTYRA Wiki uses three heading levels within article bodies:</p>
+
+        <ul>
+            <li><strong>H1</strong> — Article title only. One per page. Never used inside the article body.</li>
+            <li><strong>H2</strong> — Major sections. These appear in the Table of Contents. Written in title case. Example: <em>What This Looks Like in Practice</em></li>
+            <li><strong>H3</strong> — Subsections within an H2 section. Written in sentence case. Example: <em>Feedback loops are engineered first</em></li>
+        </ul>
+
+        <p>H4 and below should not be used in wiki articles. If content requires that level of nesting, it is a signal that the section should be split into a separate article or moved to formal documentation at docs.kontyra.name.ng.</p>
+
+        <h3>Heading anchors</h3>
+        <p>Every H2 heading should have an <code>id</code> attribute for deep linking. The ID should be a lowercase, hyphenated version of the heading text. Example: <code>id="heading-format"</code></p>
+
+        <h2 id="writing-style">Writing Style</h2>
+
+        <p>KONTYRA Wiki articles are written to be read by intelligent, time-pressed people who want substance, not performance. The following principles govern style:</p>
+
+        <h3>Be direct</h3>
+        <p>Lead with the point. Avoid preamble. "DevOS is KONTYRA's developer operating system" is better than "In this article, we will explore KONTYRA's flagship product, DevOS, which is a developer operating system."</p>
+
+        <h3>Be specific</h3>
+        <p>Vague language is a sign that thinking is incomplete. "DevOS makes software development better" says nothing. "DevOS maintains a continuous model of your software's behavior, updated in real time as code changes" says something.</p>
+
+        <h3>Avoid hype</h3>
+        <p>KONTYRA products are in development. Articles should be honest about status, limitations, and what is not yet known. Hype erodes trust and makes the wiki less useful over time.</p>
+
+        <h3>Use "we" sparingly</h3>
+        <p>Wiki articles are primarily third-person and informational, not first-person company communications. "We" is acceptable in philosophy and vision articles but should be avoided in product descriptions and technical documentation.</p>
+
+        <h3>Read time</h3>
+        <p>Estimate read time at 200 words per minute. Round up to the nearest minute. A 1,200-word article is a 6-minute read.</p>
+
+        <h2 id="citation-rules">Citation Rules</h2>
+
+        <p>KONTYRA Wiki articles should be citable and verifiable. The following citation principles apply:</p>
+
+        <h3>Internal references</h3>
+        <p>Link to other wiki articles by name using standard anchor links. Example: <em>See <a href="/articles/what-is-kontyra.html">What is KONTYRA?</a> for background.</em> Do not use bare URLs for internal links.</p>
+
+        <h3>External references</h3>
+        <p>External links should open in the same tab (the default). Do not use <code>target="_blank"</code> without a specific reason. When referencing external research, papers, or publications, include the author, title, and year in the text. Example: <em>Smith et al. (2024) found that…</em></p>
+
+        <h3>Statements of fact vs. opinion</h3>
+        <p>Distinguish between factual claims and KONTYRA's perspective. "DevOS is in active development" is a fact. "The fragmentation of developer tooling is the core problem DevOS solves" is KONTYRA's assessment — and should be written as such.</p>
+
+        <h3>Status claims</h3>
+        <p>Any claim about a product's status (availability, roadmap position, capabilities) must be accurate at the time of writing and should include the article's publication date so readers can calibrate how current the information is.</p>
+
+        <h2 id="naming-conventions">Naming Conventions</h2>
+
+        <h3>File naming</h3>
+        <p>Article files use lowercase, hyphenated names. No spaces, no underscores, no uppercase.</p>
+        <ul>
+            <li>Correct: <code>what-is-kontyra.html</code></li>
+            <li>Incorrect: <code>What_Is_Kontyra.html</code>, <code>WhatIsKontyra.html</code></li>
+        </ul>
+
+        <h3>URL structure</h3>
+        <ul>
+            <li>Articles: <code>/articles/article-name.html</code></li>
+            <li>Product pages: <code>/products.html#product-name</code> or <code>/products/product-name.html</code></li>
+            <li>Research: <code>/research/paper-name.html</code></li>
+            <li>Documentation: managed at <code>docs.kontyra.name.ng</code></li>
+        </ul>
+
+        <h3>Product names</h3>
+        <p>KONTYRA product names are always written exactly as follows:</p>
+        <ul>
+            <li><strong>DevOS</strong> — not "devos", "Dev OS", or "Dev-OS"</li>
+            <li><strong>MatGuru</strong> — not "MatGURU" or "Matguru"</li>
+            <li><strong>EconCLI</strong> — not "Econ CLI" or "econcli"</li>
+            <li><strong>Trust API</strong> — two words, not "TrustAPI" or "trustapi"</li>
+        </ul>
+
+        <h3>Company name</h3>
+        <p><strong>KONTYRA</strong> is always written in full caps. Never "Kontyra" or "kontyra".</p>
+
+        <h2 id="article-categories">Article Categories</h2>
+
+        <p>Every article must be tagged with exactly one primary category:</p>
+
+        <ul>
+            <li><strong>Foundation</strong> — Articles about KONTYRA's history, mission, and core identity</li>
+            <li><strong>Vision</strong> — Articles about philosophy, long-term thinking, and strategic direction</li>
+            <li><strong>Product</strong> — Articles about specific KONTYRA products</li>
+            <li><strong>Research</strong> — Articles summarizing or presenting original KONTYRA research</li>
+            <li><strong>Architecture</strong> — Articles about system design and engineering architecture</li>
+            <li><strong>Reference</strong> — Style guides, glossaries, and reference documents (like this article)</li>
+        </ul>
+
+        <h2 id="what-belongs-here">What Belongs Here vs. docs.kontyra.name.ng</h2>
+
+        <p>The KONTYRA Wiki and the formal documentation site serve different purposes and should not overlap:</p>
+
+        <div class="callout">
+            <p><strong>KONTYRA Wiki (wiki.kontyra.name.ng)</strong> — Articles, research, philosophy, product overviews, architecture explanations, and anything that provides context and understanding. Written for a general audience that includes non-engineers.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>KONTYRA Docs (docs.kontyra.name.ng)</strong> — API references, integration guides, configuration options, CLI documentation, and anything a developer needs to actually use a KONTYRA product. Written for engineers actively building with KONTYRA tools.</p>
+        </div>
+
+        <p>When in doubt: if someone needs to build something, it belongs in docs. If someone needs to understand something, it belongs in the wiki.</p>
+
+        <hr>
+
+        <p>Questions about these conventions can be raised in the KONTYRA internal channels. The style guide will be updated as new content types emerge and as the wiki grows. See the <a href="/">homepage</a> for the latest articles and product information.</p>
+
+    </div>
+</article>
+
+<div class="article-nav">
+    <a href="/articles/continuous-intelligence-limitless-impact.html">
+        <small>Previous Article</small>
+        ← Continuous Intelligence, Limitless Impact
+    </a>
+    <span></span>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <h3>✦KONTYRA Wiki</h3>
+            <p>The official knowledge platform for the KONTYRA ecosystem. Continuously updated as KONTYRA grows.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Wiki</h4>
+            <ul>
+                <li><a href="/articles/">Articles</a></li>
+                <li><a href="/research.html">Research</a></li>
+                <li><a href="/documentation.html">Documentation</a></li>
+                <li><a href="/architecture.html">Architecture</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+                <li><a href="/articles/introducing-devos.html">DevOS</a></li>
+                <li><a href="/products.html#matguru">MatGuru</a></li>
+                <li><a href="/products.html#econcli">EconCLI</a></li>
+                <li><a href="/products.html#trust-api">Trust API</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>More</h4>
+            <ul>
+                <li><a href="/roadmap.html">Roadmap</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/articles/wiki-style-guide.html">Style Guide</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 KONTYRA. All rights reserved.</span>
+        <span>wiki.kontyra.name.ng</span>
+    </div>
+</footer>
+
+</body>
+</html>

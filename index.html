@@ -3,119 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KONTYRA Wiki</title>
-
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, sans-serif;
-        }
-
-        body{
-            background:#0a0a0a;
-            color:#ffffff;
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            padding:20px;
-        }
-
-        .container{
-            max-width:800px;
-        }
-
-        .logo{
-            font-size:3rem;
-            font-weight:700;
-            margin-bottom:10px;
-        }
-
-        .tagline{
-            color:#a0a0a0;
-            font-size:1.1rem;
-            margin-bottom:30px;
-        }
-
-        h1{
-            font-size:2.5rem;
-            margin-bottom:20px;
-        }
-
-        p{
-            color:#cfcfcf;
-            line-height:1.8;
-            margin-bottom:30px;
-        }
-
-        .buttons{
-            display:flex;
-            gap:15px;
-            justify-content:center;
-            flex-wrap:wrap;
-        }
-
-        .btn{
-            padding:12px 24px;
-            border-radius:10px;
-            text-decoration:none;
-            font-weight:bold;
-            transition:.3s;
-        }
-
-        .primary{
-            background:#ffffff;
-            color:#000000;
-        }
-
-        .secondary{
-            border:1px solid #444;
-            color:#ffffff;
-        }
-
-        .btn:hover{
-            transform:translateY(-2px);
-        }
-
-        footer{
-            margin-top:50px;
-            color:#777;
-            font-size:0.9rem;
-        }
-    </style>
+    <title>KONTYRA Wiki — Official Knowledge Platform</title>
+    <meta name="description" content="The official knowledge platform for KONTYRA. Explore documentation, product information, research, engineering resources, and future innovations.">
+    <meta property="og:title" content="KONTYRA Wiki">
+    <meta property="og:description" content="Continuous Intelligence. Limitless Impact. The official KONTYRA knowledge platform.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
-<div class="container">
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">✦KONTYRA <span>Wiki</span></a>
+        <ul class="nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/products.html">Products</a></li>
+            <li><a href="/documentation.html">Documentation</a></li>
+            <li><a href="/research.html">Research</a></li>
+            <li><a href="/roadmap.html">Roadmap</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+        <div class="nav-search">
+            <input class="nav-search-input" type="search" placeholder="Search wiki…" aria-label="Search">
+        </div>
+    </div>
+</nav>
 
-    <div class="logo">✦KONTYRA✦</div>
+<section class="hero">
+    <div class="hero-logo">✦ KONTYRA ✦</div>
+    <h1>The Official Knowledge Platform</h1>
+    <p>Explore documentation, research, product information, and engineering resources across the KONTYRA ecosystem.</p>
+    <form class="search-bar" onsubmit="return false;">
+        <input type="search" placeholder="Search articles, products, documentation…" aria-label="Search wiki">
+        <button type="submit">Search</button>
+    </form>
+</section>
 
-    <div class="tagline">
-        Continuous Intelligence. Limitless Impact.
+<main>
+
+    <!-- Featured Article -->
+    <div class="container">
+        <div class="section">
+            <div class="section-header">
+                <span class="section-title">Featured Article</span>
+            </div>
+            <div class="featured-article">
+                <div class="featured-article-body">
+                    <span class="featured-badge">✦ Start Here</span>
+                    <h2>What is KONTYRA?</h2>
+                    <p>An introduction to the company, its mission of Continuous Intelligence, and what makes KONTYRA different from every other technology venture.</p>
+                    <a href="/articles/what-is-kontyra.html" class="btn btn-primary">Read Article →</a>
+                </div>
+                <div class="featured-article-visual">
+                    <div class="featured-visual-logo">✦K✦</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <h1>KONTYRA Wiki</h1>
-
-    <p>
-        Welcome to the official knowledge platform for KONTYRA.
-        Explore documentation, product information, research,
-        engineering resources, and future innovations across the
-        KONTYRA ecosystem.
-    </p>
-
-    <div class="buttons">
-        <a href="#" class="btn primary">Documentation</a>
-        <a href="#" class="btn secondary">Products</a>
+    <!-- Latest Articles -->
+    <div class="container">
+        <div class="section">
+            <div class="section-header">
+                <span class="section-title">Latest Articles</span>
+                <a href="/articles/" class="section-link">View all →</a>
+            </div>
+            <div class="article-grid">
+                <a href="/articles/what-is-kontyra.html" class="article-card">
+                    <div class="article-card-meta">
+                        <span class="tag">Foundation</span>
+                        <span class="article-date">June 6, 2026</span>
+                    </div>
+                    <h3>What is KONTYRA?</h3>
+                    <p>An introduction to the company, its philosophy of Continuous Intelligence, and its vision for limitless impact.</p>
+                </a>
+                <a href="/articles/introducing-devos.html" class="article-card">
+                    <div class="article-card-meta">
+                        <span class="tag">Product</span>
+                        <span class="article-date">June 6, 2026</span>
+                    </div>
+                    <h3>Introducing DevOS</h3>
+                    <p>DevOS is KONTYRA's developer operating system — a unified environment for building, deploying, and understanding software at scale.</p>
+                </a>
+                <a href="/articles/continuous-intelligence-limitless-impact.html" class="article-card">
+                    <div class="article-card-meta">
+                        <span class="tag">Vision</span>
+                        <span class="article-date">June 6, 2026</span>
+                    </div>
+                    <h3>Continuous Intelligence, Limitless Impact</h3>
+                    <p>The philosophy behind KONTYRA's tagline and what it means for how we build technology.</p>
+                </a>
+            </div>
+        </div>
     </div>
 
-    <footer>
-        © 2026 KONTYRA. All rights reserved.
-    </footer>
+    <!-- Knowledge Categories -->
+    <div class="container">
+        <div class="section">
+            <div class="section-header">
+                <span class="section-title">Knowledge Categories</span>
+            </div>
+            <div class="category-grid">
+                <a href="/articles/" class="category-card">
+                    <div class="category-icon">📄</div>
+                    <div class="category-name">Articles</div>
+                    <div class="category-count">3 articles</div>
+                </a>
+                <a href="/research.html" class="category-card">
+                    <div class="category-icon">🔬</div>
+                    <div class="category-name">Research</div>
+                    <div class="category-count">Coming soon</div>
+                </a>
+                <a href="/documentation.html" class="category-card">
+                    <div class="category-icon">📚</div>
+                    <div class="category-name">Documentation</div>
+                    <div class="category-count">Coming soon</div>
+                </a>
+                <a href="/architecture.html" class="category-card">
+                    <div class="category-icon">🏗️</div>
+                    <div class="category-name">Architecture</div>
+                    <div class="category-count">Coming soon</div>
+                </a>
+                <a href="/products.html" class="category-card">
+                    <div class="category-icon">⚙️</div>
+                    <div class="category-name">Products</div>
+                    <div class="category-count">4 products</div>
+                </a>
+                <a href="/roadmap.html" class="category-card">
+                    <div class="category-icon">🗺️</div>
+                    <div class="category-name">Roadmaps</div>
+                    <div class="category-count">Coming soon</div>
+                </a>
+            </div>
+        </div>
+    </div>
 
-</div>
+    <!-- Products -->
+    <div class="container">
+        <div class="section">
+            <div class="section-header">
+                <span class="section-title">KONTYRA Products</span>
+                <a href="/products.html" class="section-link">View all →</a>
+            </div>
+            <div class="product-grid">
+                <a href="/articles/introducing-devos.html" class="product-card">
+                    <div class="product-code">KNT-001</div>
+                    <div class="product-name">DevOS</div>
+                    <div class="product-desc">A unified developer operating system for building, deploying, and understanding software at scale.</div>
+                    <span class="product-status">In Development</span>
+                </a>
+                <a href="/products.html#matguru" class="product-card">
+                    <div class="product-code">KNT-002</div>
+                    <div class="product-name">MatGuru</div>
+                    <div class="product-desc">Intelligent materials intelligence platform for engineering and research teams.</div>
+                    <span class="product-status">In Development</span>
+                </a>
+                <a href="/products.html#econcli" class="product-card">
+                    <div class="product-code">KNT-003</div>
+                    <div class="product-name">EconCLI</div>
+                    <div class="product-desc">Economic analysis and modeling tools delivered through a powerful command-line interface.</div>
+                    <span class="product-status">In Development</span>
+                </a>
+                <a href="/products.html#trust-api" class="product-card">
+                    <div class="product-code">KNT-004</div>
+                    <div class="product-name">Trust API</div>
+                    <div class="product-desc">A verification and trust-scoring API for building reliable, accountable systems.</div>
+                    <span class="product-status">In Development</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <h3>✦KONTYRA Wiki</h3>
+            <p>The official knowledge platform for the KONTYRA ecosystem. Continuously updated as KONTYRA grows.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Wiki</h4>
+            <ul>
+                <li><a href="/articles/">Articles</a></li>
+                <li><a href="/research.html">Research</a></li>
+                <li><a href="/documentation.html">Documentation</a></li>
+                <li><a href="/architecture.html">Architecture</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+                <li><a href="/articles/introducing-devos.html">DevOS</a></li>
+                <li><a href="/products.html#matguru">MatGuru</a></li>
+                <li><a href="/products.html#econcli">EconCLI</a></li>
+                <li><a href="/products.html#trust-api">Trust API</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>More</h4>
+            <ul>
+                <li><a href="/roadmap.html">Roadmap</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/articles/wiki-style-guide.html">Style Guide</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 KONTYRA. All rights reserved.</span>
+        <span>wiki.kontyra.name.ng</span>
+    </div>
+</footer>
 
 </body>
-  </html>
+</html>
