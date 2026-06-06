@@ -783,6 +783,212 @@ footer {
 
 /* ─── RESPONSIVE ──────────────────────────────────────── */
 
+/* ─── PAGE HEADER ────────────────────────────────────── */
+
+.page-header {
+    padding: 48px 24px 40px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* ─── COMING SOON ────────────────────────────────────── */
+
+.coming-soon-page {}
+
+.coming-soon-hero {
+    text-align: center;
+    padding: 72px 24px 64px;
+    border-bottom: 1px solid var(--border);
+}
+
+.coming-soon-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 12px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.coming-soon-hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
+.coming-soon-hero p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.coming-soon-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 56px 0 0;
+}
+
+.coming-soon-area {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+}
+
+.coming-soon-area-icon {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.coming-soon-area h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.coming-soon-area p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.coming-soon-note {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 32px 0 0;
+}
+
+.coming-soon-note-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+}
+
+.coming-soon-note p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.coming-soon-related {
+    padding: 48px 0 80px;
+}
+
+/* ─── 404 ─────────────────────────────────────────────── */
+
+.error-page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 80px 24px 80px;
+    text-align: center;
+}
+
+.error-code {
+    font-size: 6rem;
+    font-weight: 700;
+    color: var(--bg-3);
+    line-height: 1;
+    margin-bottom: 16px;
+    letter-spacing: -0.04em;
+}
+
+.error-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.error-message {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.error-suggestions {
+    margin-top: 48px;
+    text-align: left;
+}
+
+.error-suggestions-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.error-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.error-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.error-link:hover {
+    border-color: #3a3a3a;
+    transform: translateY(-1px);
+    color: inherit;
+}
+
+.error-link-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.error-link-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 2px;
+}
+
+.error-link-sub {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+@media (max-width: 480px) {
+    .error-links { grid-template-columns: 1fr; }
+    .error-code { font-size: 4rem; }
+}
+
 @media (max-width: 768px) {
     .featured-article {
         grid-template-columns: 1fr;

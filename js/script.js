@@ -53,6 +53,13 @@
 
         var articles = [
             {
+                title: 'The Origin of KONTYRA',
+                url: '/articles/the-origin-of-kontyra.html',
+                tag: 'Foundation',
+                date: 'June 6, 2026',
+                excerpt: 'The story behind the name — from Cool Shot Systems to a technology company built around the idea of Continuous Intelligence.'
+            },
+            {
                 title: 'What is KONTYRA?',
                 url: '/articles/what-is-kontyra.html',
                 tag: 'Foundation',
