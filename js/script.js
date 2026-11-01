@@ -1,14 +1,115 @@
 (function () {
 
+    var sidebarItems = [
+        { href: '/', label: 'Overview' },
+        { href: '/documentation.html', label: 'Docs' },
+        { href: '/products.html', label: 'Products' },
+        { href: '/research.html', label: 'Research' },
+        { href: '/roadmap.html', label: 'Roadmap' },
+        { href: '/about.html', label: 'About' }
+    ];
+
+    function normalizePath(pathname) {
+        var normalized = (pathname || '/')
+            .replace(/index\.html$/, '')
+            .replace(/\.html$/, '')
+            .replace(/\/+$/, '');
+        return normalized || '/';
+    }
+
+    function initSidebar() {
+        if (document.querySelector('.site-sidebar')) return;
+
+        var body = document.body;
+        if (!body) return;
+
+        body.classList.add('has-sidebar');
+
+        var sidebar = document.createElement('aside');
+        sidebar.className = 'site-sidebar';
+        sidebar.id = 'site-sidebar-panel';
+        sidebar.setAttribute('aria-label', 'Sidebar');
+
+        var links = sidebarItems.map(function (item) {
+            return '<li><a href="' + item.href + '">' + item.label + '</a></li>';
+        }).join('');
+
+        sidebar.innerHTML =
+            '<a href="/" class="sidebar-logo"><span class="nav-mark">K</span><span class="sidebar-logo-text">KONTYRA Wiki</span></a>' +
+            '<div class="sidebar-search"><input class="nav-search-input" type="search" placeholder="Search" aria-label="Search"></div>' +
+            '<ul class="sidebar-links">' + links + '</ul>' +
+            '<p class="sidebar-note">Continuous Intelligence.<br>Limitless Impact.</p>';
+
+        var overlay = document.createElement('div');
+        overlay.className = 'sidebar-overlay';
+        overlay.setAttribute('hidden', 'hidden');
+
+        body.appendChild(sidebar);
+        body.appendChild(overlay);
+
+        var navInner = document.querySelector('.nav-inner');
+        if (navInner && !navInner.querySelector('.sidebar-toggle')) {
+            var toggle = document.createElement('button');
+            toggle.className = 'sidebar-toggle';
+            toggle.type = 'button';
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-controls', 'site-sidebar-panel');
+            toggle.innerHTML = '<span></span>Menu';
+            navInner.insertBefore(toggle, navInner.firstChild);
+        }
+
+        function closeSidebar() {
+            body.classList.remove('sidebar-open');
+            var toggle = document.querySelector('.sidebar-toggle');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+            overlay.setAttribute('hidden', 'hidden');
+        }
+
+        function openSidebar() {
+            body.classList.add('sidebar-open');
+            var toggle = document.querySelector('.sidebar-toggle');
+            if (toggle) toggle.setAttribute('aria-expanded', 'true');
+            overlay.removeAttribute('hidden');
+        }
+
+        document.addEventListener('click', function (e) {
+            var target = e.target;
+            if (!(target instanceof Element)) return;
+
+            if (target.closest('.sidebar-toggle')) {
+                if (body.classList.contains('sidebar-open')) {
+                    closeSidebar();
+                } else {
+                    openSidebar();
+                }
+            }
+
+            if (target.closest('.sidebar-overlay') || target.closest('.sidebar-links a')) {
+                closeSidebar();
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 980) {
+                closeSidebar();
+            }
+        });
+    }
+
     function setActiveNav() {
-        var path = window.location.pathname;
-        var links = document.querySelectorAll('.nav-links a');
+        var path = normalizePath(window.location.pathname);
+        var links = document.querySelectorAll('.nav-links a, .sidebar-links a');
+
         links.forEach(function (link) {
             link.classList.remove('active');
             var href = link.getAttribute('href');
-            if (href === '/' && path === '/') {
+            if (!href) return;
+
+            var linkPath = normalizePath(new URL(href, window.location.origin).pathname);
+            var isRoot = linkPath === '/';
+            if (isRoot && path === '/') {
                 link.classList.add('active');
-            } else if (href !== '/' && path.startsWith(href.replace('.html', ''))) {
+            } else if (!isRoot && (path === linkPath || path.startsWith(linkPath + '/'))) {
                 link.classList.add('active');
             }
         });
@@ -27,8 +128,8 @@
             });
         });
 
-        var navInput = document.querySelector('.nav-search-input');
-        if (navInput) {
+        var navInputs = document.querySelectorAll('.nav-search-input');
+        navInputs.forEach(function (navInput) {
             navInput.addEventListener('keydown', function (e) {
                 if (e.key === 'Enter') {
                     var query = navInput.value.trim();
@@ -37,7 +138,7 @@
                     }
                 }
             });
-        }
+        });
     }
 
     function initSearch_page() {
@@ -119,6 +220,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+        initSidebar();
         setActiveNav();
         initSearch();
         initSearch_page();
